@@ -1,0 +1,113 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: "Public Sans", Helvetica, Arial, sans-serif;
+    font-size: 2rem;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-color: lightsteelblue;
+    color: midnightblue;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/*
+ * **************************************************
+ * page-wrapper
+ * **************************************************
+ */
+
+.page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+}
+@media screen and (min-width: 800px) {
+    .page-wrapper {
+        grid-template-columns: minmax(300px, 1fr) 300px;
+    }
+}
+
+/*
+ * **************************************************
+ * intro
+ * **************************************************
+ */
+
+.intro {
+    background-color: rgba(255, 0, 0, 0.5);
+    grid-column: 1 / -1;
+}
+
+.intro header {
+    background-color: yellow;
+    display: grid;
+    grid-template-columns: minmax(250px, 600px) minmax(80px, 150px);
+    grid-column-gap: 1rem;
+    justify-content: end;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.intro header::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: cornflowerblue;
+    z-index: -1;
+    clip-path: polygon(0 8%, 7% 6%, 14% 5%, 21% 5%, 28% 6%, 34% 8%, 40% 12%, 46% 17%, 50% 20%, 54% 23%, 60% 25%, 66% 26%, 70% 26%, 77% 25%, 83% 23%, 89% 21%, 95% 19%, 100% 17%, 100% 100%, 0% 100%);
+    transform: rotateX(180deg);
+    opacity: 0.5;
+}
+
+.intro header h1 {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin: 0;
+    grid-column: 2;
+    text-shadow: -8px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* calc(100vw / 75) */
+/* max(1em, min(4em, calc(var(--base-scale) * 4))); */
+.intro header h2 {
+    font-size: max(1em, min(4em, 9em));
+    margin: 0;
+    grid-column: 1;
+    grid-row: 1;
+}
+.intro header h2 abbr {
+    color: red;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+/*
+ * **************************************************
+ * main
+ * **************************************************
+ */
+
+.main {
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+/*
+ * **************************************************
+ * sidebar
+ * **************************************************
+ */
+
+.sidebar {
+    background-color: rgba(0, 0, 255, 0.5); // fpo
+}
